@@ -22,7 +22,7 @@
       ansible.builtin.debug:
         msg: "The Winner is: {{ MY_VAR }}"
       
-      # 2. Task Level (ఇక్కడ '#' వాడాలి)
+      # 2. Task Level
       vars:
         MY_VAR: "MY_VAR at Task Level"
 
