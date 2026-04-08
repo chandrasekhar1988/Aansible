@@ -8,8 +8,8 @@
     MY_VAR: "MY_VAR at Play Level"
 
   # 3. File Level
-  vars_files:
-    - variables.yaml
+  # vars_files:
+  #   - variables.yaml
 
   # 4. Prompt Level
   vars_prompt:
