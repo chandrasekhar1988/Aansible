@@ -1,0 +1,39 @@
+---
+- name: Understanding Ansible Datatypes
+  hosts: localhost
+  connection: local
+  vars:
+    # 1. String (Text data, always use quotes for safety)
+    course_name: "DevOps with Ansible"
+    
+    # 2. Integer (Whole numbers, do NOT use quotes)
+    duration_days: 30
+    
+    # 3. Boolean (True or False (Case insensitive in YAML, but lowercase is standard))
+    is_certified: true
+    
+    # 4. List / Array (A collection of multiple items)
+    tools_learned:
+      - Git
+      - Docker
+      - Terraform
+
+    # 5. Dictionary (Map): Key-Value pairs for structured data
+    server_info:
+      os: "CentOS"
+      version: 9
+      cloud: "AWS"
+
+  tasks:
+    - name: Displaying different datatypes
+      ansible.builtin.debug:
+        msg: 
+          - "String Type: I am learning {{ course_name }}"
+          - "Integer Type: Duration is {{ duration_days }} days"
+          - "Boolean Type: Is certified? {{ is_certified }}"
+          - "List Type: First tool is {{ tools_learned[0] }}"
+          - "Full List: {{ tools_learned }}"
+          - "Dictionary Type (OS): Operating System is {{ server_info.os }}"
+          - "Dictionary Type (cloud): clod name is {{ server_info['cloud'] }}"
+
+          
