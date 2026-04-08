@@ -19,7 +19,7 @@
     - name: "Run this if number is greater than 5"
       ansible.builtin.debug:
         msg: "The number {{ number }} is big!"
-      when: number > 5
+      when: number | int > 5
 
     # 3. Simple Skip Example
     - name: "This will be skipped"
@@ -27,4 +27,3 @@
         msg: "You will not see this message"
       when: fruit == "banana"
 
-      
