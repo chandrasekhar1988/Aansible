@@ -12,10 +12,10 @@
   #   - variables.yaml
 
   # 4. Prompt Level
-  vars_prompt:
-    - name: "MY_VAR"
-      prompt: "Please enter MY_VAR for Prompt Level"
-      private: false
+  # vars_prompt:
+  #   - name: "MY_VAR"
+  #     prompt: "Please enter MY_VAR for Prompt Level"
+  #     private: false
 
   tasks:
     - name: "Checking who wins the preference war"
