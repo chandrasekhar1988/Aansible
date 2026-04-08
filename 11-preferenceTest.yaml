@@ -7,19 +7,19 @@
   roles:
     - test_role
 
-  # 5. Play Level
-  # vars:
-  #   MY_VAR: "MY_VAR at Play Level"
+  #5. Play Level
+  vars:
+    MY_VAR: "MY_VAR at Play Level"
 
-  # 3. File Level
-  # vars_files:
-  #   - variables.yaml
+  #3. File Level
+  vars_files:
+    - variables.yaml
 
-  # 4. Prompt Level
-  # vars_prompt:
-  #   - name: "MY_VAR"
-  #     prompt: "Please enter MY_VAR for Prompt Level"
-  #     private: false
+  #4. Prompt Level
+  vars_prompt:
+    - name: "MY_VAR"
+      prompt: "Please enter MY_VAR for Prompt Level"
+      private: false
 
   tasks:
     - name: "Checking who wins the preference war"
@@ -27,6 +27,6 @@
         msg: "The Winner is: {{ MY_VAR }}"
       
       # 2. Task Level
-      # vars:
-      #   MY_VAR: "MY_VAR at Task Level"
+      vars:
+        MY_VAR: "MY_VAR at Task Level"
 
