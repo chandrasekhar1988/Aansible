@@ -1,0 +1,27 @@
+---
+- name: Advanced Ansible Loops
+  hosts: localhost
+  connection: local
+  become: true
+
+  vars:
+    users_to_create:
+      - { name: 'mahesh', job: 'Developer', shell: '/bin/bash' }
+      - { name: 'suresh', job: 'Tester', shell: '/bin/sh' }
+      - { name: 'ramesh', job: 'Manager', shell: '/bin/bash' }
+
+  tasks:
+    - name: Create multiple users with specific attributes
+      ansible.builtin.user:
+        name: "{{ item.name }}"
+        comment: "Role: {{ item.job }}"
+        shell: "{{ item.shell }}"
+        state: present
+      loop: "{{ users_to_create }}"
+
+    - name: Display custom summary
+      ansible.builtin.debug:
+        msg: "Processing {{ item.name }} who works as a {{ item.job }}"
+      loop: "{{ users_to_create }}"
+
+
