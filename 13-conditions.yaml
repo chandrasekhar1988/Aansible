@@ -1,0 +1,30 @@
+---
+- name: Simple Condition Study
+  hosts: localhost
+  connection: local
+  
+  vars:
+    # Change these values to see how the tasks react
+    fruit: "apple"
+    number: 10
+
+  tasks:
+    # 1. Simple String Comparison
+    - name: "Run this if fruit is apple"
+      ansible.builtin.debug:
+        msg: "Yes, this is an apple!"
+      when: fruit == "apple"
+
+    # 2. Simple Number Comparison
+    - name: "Run this if number is greater than 5"
+      ansible.builtin.debug:
+        msg: "The number {{ number }} is big!"
+      when: number > 5
+
+    # 3. Simple Skip Example
+    - name: "This will be skipped"
+      ansible.builtin.debug:
+        msg: "You will not see this message"
+      when: fruit == "banana"
+
+      
