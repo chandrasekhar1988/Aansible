@@ -1,0 +1,20 @@
+---
+- name: Simple Loop Study
+  hosts: localhost
+  connection: local
+
+  vars:
+    # This is your 'Basket' (List)
+    my_fruits:
+      - "Apple"
+      - "Banana"
+      - "Mango"
+
+  tasks:
+    - name: "Print Fruit Name"
+      # The 'Conveyor Belt' starts here
+      ansible.builtin.debug:
+        msg: "The fruit is: {{ item }}"
+      
+      # This tells Ansible which basket to use
+      loop: "{{ my_fruits }}"
