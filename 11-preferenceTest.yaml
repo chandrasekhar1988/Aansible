@@ -1,0 +1,27 @@
+---
+- name: All-in-One Variable Preference Study
+  hosts: localhost
+  connection: local
+
+  # 5. Play Level
+  vars:
+    MY_VAR: "MY_VAR at Play Level"
+
+  # 3. File Level
+  vars_files:
+    - external_vars.yml
+
+  # 4. Prompt Level
+  vars_prompt:
+    - name: "MY_VAR"
+      prompt: "Please enter MY_VAR for Prompt Level"
+      private: false
+
+  tasks:
+    - name: "Checking who wins the preference war"
+      ansible.builtin.debug:
+        msg: "The Winner is: {{ MY_VAR }}"
+      
+      # 2. Task Level
+      vars:
+        MY_VAR: "MY_VAR at Task Level"
