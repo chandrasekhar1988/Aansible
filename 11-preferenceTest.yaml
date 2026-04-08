@@ -4,8 +4,8 @@
   connection: local
 
   # 5. Play Level
-  vars:
-    MY_VAR: "MY_VAR at Play Level"
+  # vars:
+  #   MY_VAR: "MY_VAR at Play Level"
 
   # 3. File Level
   # vars_files:
