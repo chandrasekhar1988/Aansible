@@ -9,7 +9,7 @@
 
   # 3. File Level
   vars_files:
-    - external_vars.yml
+    - variables.yaml
 
   # 4. Prompt Level
   vars_prompt:
@@ -22,7 +22,7 @@
       ansible.builtin.debug:
         msg: "The Winner is: {{ MY_VAR }}"
       
-      # 2. Task Level
-      # vars:
-      #   MY_VAR: "MY_VAR at Task Level"
+      2. Task Level
+      vars:
+        MY_VAR: "MY_VAR at Task Level"
 
