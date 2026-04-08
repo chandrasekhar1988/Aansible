@@ -1,29 +1,31 @@
-- name: variables from PLAY level
+---
+- name: All-in-One Variable Preference Study with Roles
   hosts: localhost
-  vars_files:
-  - variables.yaml
-  vars_prompt:
-  - name: PERSON
-    prompt: Please enter your name
-    private: false # user can see what they are entering
-  - name: WISHES
-    prompt: Please enter your Wishes
-    private: false # user can't see what they are entering
-  vars:
-    PERSON: "Siva from PLAY"
-    WISHES: "Morning from PLAY"
-  tasks:
-  - name: check variables
-    vars:
-      PERSON: "Siva from TASK"
-      WISHES: "Morning from TASK"
-    ansible.builtin.debug:
-      msg: "Hello {{PERSON}}, Good {{WISHES}}"
+  connection: local
 
-#1. CMD
-#2. task
-#3. File
-#4. prompt
-#5. play
-#6. inventory
-#7. roles
+  # 1. రోల్‌ని ఇక్కడ ఇంక్లూడ్ చేయాలి
+  roles:
+    - test_role
+
+  # 5. Play Level
+  vars:
+    MY_VAR: "MY_VAR at Play Level"
+
+  # 3. File Level
+  vars_files:
+    - variables.yaml
+
+  # 4. Prompt Level
+  vars_prompt:
+    - name: "MY_VAR"
+      prompt: "Please enter MY_VAR for Prompt Level"
+      private: false
+
+  tasks:
+    - name: "Checking who wins the preference war"
+      ansible.builtin.debug:
+        msg: "The Winner is: {{ MY_VAR }}"
+      
+      # 2. Task Level
+      vars:
+        MY_VAR: "MY_VAR at Task Level"

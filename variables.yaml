@@ -1,3 +1,6 @@
+#MY_VAR: "MY_VAR at File Level"
+
+
 Course: "DevOps with AWS"
 Trainer: "Sivakumar"
 Duration: "110HRS"
@@ -5,4 +8,3 @@ Duration: "110HRS"
 PERSON: "Siva from FILE"
 WISHES: "Morning from FILE"
 
-MY_VAR: "MY_VAR at File Level"
