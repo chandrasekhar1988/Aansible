@@ -23,6 +23,6 @@
         msg: "The Winner is: {{ MY_VAR }}"
       
       # 2. Task Level
-      vars:
-        MY_VAR: "MY_VAR at Task Level"
+      # vars:
+      #   MY_VAR: "MY_VAR at Task Level"
 
