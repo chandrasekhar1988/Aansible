@@ -1,6 +1,24 @@
-- name: Install multiple packages
-  yum:
-    name: "{{ item }}"
-    state: present
-  loop:
-    - git
+---
+- name: Understanding Loops in Ansible
+  hosts: localhost
+  connection: local
+  become: true  # This allows the playbook to run with sudo privileges
+  
+  tasks:
+    - name: Install multiple packages using a loop
+      yum:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - git
+        - tree
+        - wget
+        - vim
+
+    - name: Print a welcome message for different users
+      debug:
+        msg: "Hello, {{ item }}! Welcome to DevOps training."
+      loop:
+        - Amar
+        - Akbar
+        - Anthony
