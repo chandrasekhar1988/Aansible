@@ -6,4 +6,4 @@
   tasks:
     - name: Display the secret password
       ansible.builtin.debug:
-        msg: "The database password is {{ db_password }}"
+        msg: "User is {{ ansible_user }} and password is {{ ansible_password }}"
