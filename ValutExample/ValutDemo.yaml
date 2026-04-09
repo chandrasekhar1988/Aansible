@@ -6,8 +6,8 @@
   tasks:
     - name: Task 1 - Display User
       ansible.builtin.debug:
-        msg: "The database user is {{ ansible_user }}"
+        msg: "The database user is {{ myuser }}"
 
     - name: Task 2 - Display Password
       ansible.builtin.debug:
-        msg: "The database password is {{ ansible_password }}"
+        msg: "The database password is {{ mypasswd }}"
