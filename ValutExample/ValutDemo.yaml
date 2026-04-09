@@ -1,6 +1,6 @@
 ---
 - name: Ansible Vault Test Playbook
-  hosts: 54.164.39.126
+  hosts: web
   vars_files:
     - secrets.yaml
   tasks:
