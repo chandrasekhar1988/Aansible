@@ -1,0 +1,9 @@
+---
+- name: Ansible Vault Test Playbook
+  hosts: localhost
+  vars_files:
+    - secrets.yaml
+  tasks:
+    - name: Display the secret password
+      ansible.builtin.debug:
+        msg: "The database password is {{ db_password }}"
